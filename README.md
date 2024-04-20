@@ -1,7 +1,7 @@
 # Bayeta de la Fortuna
-```
+
 ![logo](panda.png) 
-```
+
 ¡Bienvenido a la Bayeta de la Fortuna! Esta aplicación te provee de frases auspiciosas para iluminar tu día y guiarte hacia el éxito.
 
 ## Descripción
