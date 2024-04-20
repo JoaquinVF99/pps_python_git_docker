@@ -35,3 +35,22 @@ python app.py
 - Para obtener múltiples frases auspiciosas: [http://localhost:5000/frotar/<n_frases>](http://localhost:5000/frotar/<n_frases>)
 
 Recuerda reemplazar `<n_frases>` con el número de frases que deseas obtener.
+
+## Construir con Docker
+
+Si prefieres utilizar Docker, puedes seguir estos pasos:
+
+1. Construye la imagen Docker:
+
+```bash
+docker build -t bayeta-de-la-fortuna .
+```
+
+2. Despliega un contenedor:
+```
+docker run -d -p 5000:5000 bayeta-de-la-fortuna
+
+```
+3. Prueba que funcione:  
+
+Accede a http://localhost:5000/ en tu navegador para verificar que la aplicación Flask esté funcionando correctamente. También puedes utilizar herramientas como curl o wget para enviar solicitudes HTTP al servidor Flask y verificar las respuestas.

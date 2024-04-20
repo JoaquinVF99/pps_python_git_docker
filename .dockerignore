@@ -1,0 +1,4 @@
+# Archivos y directorios que no queremos copiar al construir la imagen
+.git
+__pycache__
+*.pyc
