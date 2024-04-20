@@ -1,7 +1,7 @@
 # Bayeta de la Fortuna
-```
+
 ![logo](panda.png) 
-```
+
 ¡Bienvenido a la Bayeta de la Fortuna! Esta aplicación te provee de frases auspiciosas para iluminar tu día y guiarte hacia el éxito.
 
 ## Descripción
@@ -35,6 +35,7 @@ python app.py
 - Para obtener múltiples frases auspiciosas: [http://localhost:5000/frotar/<n_frases>](http://localhost:5000/frotar/<n_frases>)
 
 Recuerda reemplazar `<n_frases>` con el número de frases que deseas obtener.
+<<<<<<< HEAD
 
 ## Construir con Docker
 
@@ -54,3 +55,5 @@ docker run -d -p 5000:5000 bayeta-de-la-fortuna
 3. Prueba que funcione:  
 
 Accede a http://localhost:5000/ en tu navegador para verificar que la aplicación Flask esté funcionando correctamente. También puedes utilizar herramientas como curl o wget para enviar solicitudes HTTP al servidor Flask y verificar las respuestas.
+=======
+>>>>>>> 2861e66ac236159470204466fa2f1df7669f86dd
