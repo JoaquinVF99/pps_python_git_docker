@@ -55,3 +55,15 @@ docker run -d -p 5000:5000 bayeta-de-la-fortuna
 3. Prueba que funcione:  
 
 Accede a http://localhost:5000/ en tu navegador para verificar que la aplicación Flask esté funcionando correctamente. También puedes utilizar herramientas como curl o wget para enviar solicitudes HTTP al servidor Flask y verificar las respuestas.
+
+## Conexión a MongoDB
+
+La aplicación utiliza una base de datos MongoDB para almacenar las frases auspiciosas. MongoDB es una base de datos NoSQL que ofrece flexibilidad y escalabilidad para manejar grandes volúmenes de datos de manera eficiente.
+
+La conexión a MongoDB se establece utilizando la biblioteca pymongo en Python. La aplicación se conecta al servidor de MongoDB y accede a una base de datos llamada 'bayeta' y a una colección llamada 'frases_auspiciosas' para almacenar las frases auspiciosas.
+
+La base de datos y la colección deben estar configuradas previamente en MongoDB antes de ejecutar la aplicación. Asegúrate de que MongoDB esté en ejecución y accesible desde la aplicación antes de iniciarla.
+
+La función `frotar()` en el archivo `bayeta.py` es responsable de realizar la conexión a MongoDB, recuperar las frases auspiciosas de la colección y seleccionar frases aleatorias para mostrar en la aplicación.
+
+Si deseas modificar la conexión a MongoDB o la estructura de la base de datos, puedes hacerlo editando el archivo `bayeta.py` y ajustando los parámetros de conexión y consulta según sea necesario.
