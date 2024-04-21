@@ -6,8 +6,7 @@ services:
     container_name: mongodb-container
     ports:
       - "27017:27017"
-    volumes:
-      - mongodb-data:/data/db
+
 
   flask-app:
     build: .
