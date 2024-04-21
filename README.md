@@ -67,3 +67,56 @@ La base de datos y la colección deben estar configuradas previamente en MongoDB
 La función `frotar()` en el archivo `bayeta.py` es responsable de realizar la conexión a MongoDB, recuperar las frases auspiciosas de la colección y seleccionar frases aleatorias para mostrar en la aplicación.
 
 Si deseas modificar la conexión a MongoDB o la estructura de la base de datos, puedes hacerlo editando el archivo `bayeta.py` y ajustando los parámetros de conexión y consulta según sea necesario.
+
+## Despliegue con Docker Compose
+
+Si prefieres utilizar Docker para desplegar la aplicación y la base de datos, puedes utilizar Docker Compose para simplificar el proceso de gestión de los contenedores.
+
+1. Asegúrate de tener Docker y Docker Compose instalados en tu sistema.
+
+2. Crea un archivo `docker-compose.yml` en la raíz del proyecto y copia el siguiente contenido:
+
+```yaml
+version: '3.8'
+
+services:
+  mongodb:
+    image: mongo:latest
+    container_name: <mongo<db-container>
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodb-data:/data/db
+
+  flask-app:
+    build: .
+    container_name: <flask-app-container>
+    ports:
+      - "5000:5000"
+    depends_on:
+      - mongodb
+
+volumes:
+  mongodb-data:
+    driver: local
+
+```
+3. Abre una terminal en la raíz del proyecto y ejecuta el siguiente comando para iniciar los contenedores en segundo plano:
+```
+docker-compose up -d
+```
+
+Esto creará y ejecutará los contenedores de la aplicación Flask y MongoDB en segundo plano.
+
+4. Accede a la aplicación en tu navegador web:
+* Para obtener una sola frase auspiciosa: http://localhost:5000/
+* Para obtener múltiples frases auspiciosas: http://localhost:5000/frotar/<n_frases>
+* Recuerda reemplazar <n_frases> con el número de frases que deseas obtener.
+
+5. Cuando hayas terminado de utilizar la aplicación, puedes detener los contenedores utilizando el siguiente comando:
+
+```
+docker-compose down
+```
+
+Esto detendrá y eliminará los contenedores, pero mantendrá los datos persistentes del volumen mongodb-data.
