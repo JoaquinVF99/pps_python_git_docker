@@ -14,6 +14,6 @@ def obtener_frases_auspiciosas(n_frases):
     return jsonify(frases)
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run()
 
 
