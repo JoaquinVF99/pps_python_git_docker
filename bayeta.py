@@ -20,8 +20,23 @@ def frotar(n_frases: int = 1) -> list:
 
     return frases_seleccionadas
 
+def insertar_frases(frases):
+    """
+    Función para insertar frases en la colección de MongoDB.
+    """
+    client = MongoClient('mongodb', 27017)  # Nombre del contenedor de MongoDB
+    db = client['bayeta']
+    collection = db['frases_auspiciosas']
+    collection.insert_many(frases)
+
 if __name__ == "__main__":
     # Ejemplo de uso de la función
     frases_aleatorias = frotar(3)
     for frase in frases_aleatorias:
         print(frase)
+
+    frases_nuevas = [
+        {"frase": "Nueva frase auspiciosa 1"},
+        {"frase": "Nueva frase auspiciosa 2"}
+    ]
+    insertar_frases(frases_nuevas)
