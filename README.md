@@ -36,6 +36,24 @@ python app.py
 
 Recuerda reemplazar `<n_frases>` con el número de frases que deseas obtener.
 
+- Para añadir nuevas frases a la colección :
+* cURL:
+```
+curl -X POST \
+-H "Content-Type: application/json" \
+-d @<archivo.json> \
+http://localhost:5000/frotar/add
+```
+El formato del texto debe ser:
+```
+[
+    {"frase": "La vida es como montar en bicicleta. Para mantener el equilibrio, debes seguir adela>
+    {"frase": "La mejor forma de predecir el futuro es creándolo."},
+    {"frase": "El éxito es ir de fracaso en fracaso sin perder el entusiasmo."},
+    {"frase": "El único modo de hacer un gran trabajo es amar lo que haces."},
+    {"frase": "Si lo puedes soñar, lo puedes lograr."}
+]
+```
 
 ## Construir con Docker
 
